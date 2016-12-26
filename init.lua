@@ -8,6 +8,70 @@ minetest.override_item("default:leaves", {
 	visual_scale = 0.5,
 })
 
+minetest.override_item("default:jungleleaves", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+minetest.override_item("default:pine_needles", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+minetest.override_item("default:aspen_leaves", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+minetest.register_abm({
+	nodenames = "default:leaves",
+	interval = 5,
+	chance = 1,
+	action = function(pos, node)
+		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+			minetest.env:set_node(pos, {name="nodebox_trees:leaves_with_snow"})
+		end
+	end,
+})
+
+minetest.register_abm({
+	nodenames = "default:pine_needles",
+	interval = 5,
+	chance = 1,
+	action = function(pos, node)
+		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+			minetest.env:set_node(pos, {name="nodebox_trees:pine_needles_with_snow"})
+		end
+	end,
+})
+
+--leaves
+minetest.register_node("nodebox_trees:leaves_with_snow", {
+	description = "Leaves With Snow",
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	tiles = {"default_leaves_snow.png", "default_snow.png", "default_snow.png",}, 
+	paramtype = "light",
+	visual_scale = 0.5,
+	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
+})
+
+minetest.register_node("nodebox_trees:pine_needles_with_snow", {
+	description = "Pine Needles With Snow",
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	tiles = {"default_pine_needles_snow.png",}, 
+	paramtype = "light",
+	visual_scale = 0.5,
+	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
+})
+
 --trunk overrides
 
 minetest.override_item("default:acacia_tree", {
