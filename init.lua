@@ -1,4 +1,15 @@
 
+--leaf overrides
+
+minetest.override_item("default:leaves", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+--trunk overrides
+
 minetest.override_item("default:acacia_tree", {
 	drawtype = "nodebox",
 	paramtype = "light",
