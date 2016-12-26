@@ -8,6 +8,14 @@ minetest.override_item("default:leaves", {
 	visual_scale = 0.5,
 })
 
+minetest.override_item("default:acacia_leaves", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+
 minetest.override_item("default:jungleleaves", {
 	drawtype = "mesh",
 	mesh = "leaf.b3d",
