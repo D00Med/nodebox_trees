@@ -47,7 +47,7 @@ minetest.register_node("nodebox_trees:waterlily", {
 	end
 })
 
---leaf overrides
+--overrides
 
 minetest.override_item("default:papyrus", {
 })
