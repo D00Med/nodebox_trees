@@ -1,6 +1,14 @@
 
 --leaf overrides
 
+minetest.override_item("default:cactus", {
+	drawtype = "mesh",
+	mesh = "cactus.b3d",
+	tiles = {"cactus.png"},
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
 minetest.override_item("default:leaves", {
 	drawtype = "mesh",
 	mesh = "leaf.b3d",
