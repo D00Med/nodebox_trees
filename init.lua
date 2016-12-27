@@ -1,10 +1,91 @@
 
+-- waterlily Originally by Ironzorg (MIT) and VanessaE (MIT)
+minetest.register_node("nodebox_trees:waterlily", {
+	description = "Waterlily (no flower)",
+	drawtype = "mesh",
+	mesh = "waterlily.b3d",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	visual_scale = 0.5,
+	tiles = {"waterlily_noflower.png",},
+	inventory_image = "flowers_waterlily.png",
+	wield_image = "flowers_waterlily.png",
+	liquids_pointable = true,
+	walkable = false,
+	buildable_to = true,
+	sunlight_propagates = true,
+	floodable = true,
+	groups = {snappy = 3, flower = 1, flammable = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	node_placement_prediction = "",
+	selection_box = {
+		type = "fixed",
+		fixed = {-7 / 16, -0.5, -7 / 16, 7 / 16, -15 / 32, 7 / 16}
+	},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		local pos = pointed_thing.above
+		local node = minetest.get_node(pointed_thing.under).name
+		local def = minetest.registered_nodes[node]
+		local player_name = placer:get_player_name()
+
+		if def and def.liquidtype == "source" and
+				minetest.get_item_group(node, "water") > 0 then
+			if not minetest.is_protected(pos, player_name) then
+				minetest.set_node(pos, {name = "nodebox_trees:waterlily",
+					param2 = math.random(0, 3)})
+				if not minetest.setting_getbool("creative_mode") then
+					itemstack:take_item()
+				end
+			else
+				minetest.chat_send_player(player_name, "Node is protected")
+				minetest.record_protection_violation(pos, player_name)
+			end
+		end
+
+		return itemstack
+	end
+})
+
 --leaf overrides
+
+minetest.override_item("default:papyrus", {
+})
 
 minetest.override_item("default:cactus", {
 	drawtype = "mesh",
 	mesh = "cactus.b3d",
 	tiles = {"cactus.png"},
+	paramtype = "light",
+	visual_scale = 0.5,
+	selection_box = {
+	type = "fixed",
+	fixed = {-0.4, -0.5, -0.4, 0.4, 0.5, 0.4},
+	},
+	collision_box = {
+	type = "fixed",
+	fixed = {-0.4, -0.5, -0.4, 0.4, 0.5, 0.4},
+	},
+})
+
+minetest.override_item("flowers:waterlily", {
+	drawtype = "mesh",
+	tiles = {"waterlily.png"},
+	mesh = "waterlily.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+minetest.override_item("default:bush_leaves", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.5,
+})
+
+minetest.override_item("default:acacia_bush_leaves", {
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
 })
