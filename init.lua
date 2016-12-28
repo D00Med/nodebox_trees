@@ -384,3 +384,9 @@ minetest.register_node("nodebox_trees:acacia_tree", {
 	sounds = default.node_sound_wood_defaults(),
 	on_place = minetest.rotate_node,
 })
+
+local mapgen = true
+
+if mapgen and minetest.get_mapgen_setting("mg_name") ~= "v6" then
+dofile(minetest.get_modpath("nodebox_trees").."/mapgen.lua")
+end
