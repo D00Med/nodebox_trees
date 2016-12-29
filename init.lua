@@ -7,7 +7,7 @@ minetest.register_node("nodebox_trees:waterlily", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	visual_scale = 0.5,
-	tiles = {"waterlily_noflower.png",},
+	tiles = {"nodeboxtrees_waterlily_noflower.png",},
 	inventory_image = "flowers_waterlily.png",
 	wield_image = "flowers_waterlily.png",
 	liquids_pointable = true,
@@ -55,7 +55,7 @@ minetest.override_item("default:papyrus", {
 minetest.override_item("default:cactus", {
 	drawtype = "mesh",
 	mesh = "cactus.b3d",
-	tiles = {"cactus.png"},
+	tiles = {"nodeboxtrees_cactus.png"},
 	paramtype = "light",
 	visual_scale = 0.5,
 	selection_box = {
@@ -70,15 +70,31 @@ minetest.override_item("default:cactus", {
 
 minetest.override_item("flowers:waterlily", {
 	drawtype = "mesh",
-	tiles = {"waterlily.png"},
+	tiles = {"nodeboxtrees_waterlily.png"},
 	mesh = "waterlily.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
 })
 
+minetest.override_item("default:coral_brown", {
+	drawtype = "mesh",
+	tiles = {"nodeboxtrees_bcoral.png"},
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.55,
+})
+
+minetest.override_item("default:coral_orange", {
+	drawtype = "mesh",
+	tiles = {"nodeboxtrees_ocoral.png"},
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.55,
+})
+
 minetest.override_item("default:bush_leaves", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_leaves_simple.png",
+	tiles = {"nodeboxtrees_leaves_simple.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -86,7 +102,7 @@ minetest.override_item("default:bush_leaves", {
 
 minetest.override_item("default:acacia_bush_leaves", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_acacia_leaves_simple.png",
+	tiles = {"nodeboxtrees_acacia_leaves_simple.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -94,7 +110,7 @@ minetest.override_item("default:acacia_bush_leaves", {
 
 minetest.override_item("default:leaves", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_leaves.png",
+	tiles = {"nodeboxtrees_leaves.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -102,7 +118,7 @@ minetest.override_item("default:leaves", {
 
 minetest.override_item("default:acacia_leaves", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_acacia_leaves.png",
+	tiles = {"nodeboxtrees_acacia_leaves.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -111,7 +127,7 @@ minetest.override_item("default:acacia_leaves", {
 
 minetest.override_item("default:jungleleaves", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_jungleleaves.png",
+	tiles = {"nodeboxtrees_jungleleaves.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -119,7 +135,7 @@ minetest.override_item("default:jungleleaves", {
 
 minetest.override_item("default:pine_needles", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_pine_needles.png",
+	tiles = {"nodeboxtrees_pine_needles.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -127,7 +143,7 @@ minetest.override_item("default:pine_needles", {
 
 minetest.override_item("default:aspen_leaves", {
 	drawtype = "mesh",
-	tiles = "nodeboxtrees_aspen_leaves.png",
+	tiles = {"nodeboxtrees_aspen_leaves.png"},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -171,7 +187,7 @@ minetest.register_node("nodebox_trees:leaves_with_snow", {
 	description = "Leaves With Snow",
 	drawtype = "mesh",
 	mesh = "leaf.b3d",
-	tiles = {"default_leaves_snow.png", "default_snow.png", "default_snow.png",}, 
+	tiles = {"nodeboxtrees_leaves_snow.png", "default_snow.png", "default_snow.png",}, 
 	paramtype = "light",
 	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
@@ -181,7 +197,7 @@ minetest.register_node("nodebox_trees:bush_leaves_with_snow", {
 	description = "Bush Leaves With Snow",
 	drawtype = "mesh",
 	mesh = "leaf.b3d",
-	tiles = {"default_leaves_snow_simple.png", "default_snow.png", "default_snow.png",}, 
+	tiles = {"nodeboxtrees_leaves_snow_simple.png", "default_snow.png", "default_snow.png",}, 
 	paramtype = "light",
 	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
@@ -191,7 +207,7 @@ minetest.register_node("nodebox_trees:pine_needles_with_snow", {
 	description = "Pine Needles With Snow",
 	drawtype = "mesh",
 	mesh = "leaf.b3d",
-	tiles = {"default_pine_needles_snow.png",}, 
+	tiles = {"nodeboxtrees_pine_needles_snow.png",}, 
 	paramtype = "light",
 	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}

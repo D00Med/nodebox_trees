@@ -410,7 +410,7 @@ minetest.clear_registered_decorations()
 			octaves = 3,
 			persist = 0.66
 		},
-		biomes = {"deciduous_forest"},
+		biomes = {"deciduous_forest", "rainforest"},
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/aspen_1.mts",
@@ -591,6 +591,63 @@ minetest.clear_registered_decorations()
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/bush.mts",
 		flags = "place_center_x, place_center_z",
 	})
+	
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass", "default:dirt_with_snow"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.001,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 137,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"snowy_grassland", "grassland", "deciduous_forest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/bush1.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass", "default:dirt_with_snow"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.001,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 137,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"snowy_grassland", "grassland", "deciduous_forest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/bush2.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass", "default:dirt_with_snow"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.001,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 137,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"snowy_grassland", "grassland", "deciduous_forest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/bush3.mts",
+		flags = "place_center_x, place_center_z",
+	})
 
 	-- Acacia bush
 
@@ -600,7 +657,7 @@ minetest.clear_registered_decorations()
 		sidelen = 16,
 		noise_params = {
 			offset = -0.004,
-			scale = 0.01,
+			scale = 0.001,
 			spread = {x = 100, y = 100, z = 100},
 			seed = 90155,
 			octaves = 3,
@@ -610,6 +667,63 @@ minetest.clear_registered_decorations()
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/acaciabush.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_dry_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.001,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 90155,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"savanna"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/acaciabush1.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_dry_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.001,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 90155,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"savanna"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/acaciabush2.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_dry_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.001,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 90155,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"savanna"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/acaciabush3.mts",
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -630,6 +744,63 @@ minetest.clear_registered_decorations()
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/junglebush.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+		minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.01,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 90155,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"rainforest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/junglebush1.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+		minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.01,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 90155,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"rainforest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/junglebush2.mts",
+		flags = "place_center_x, place_center_z",
+	})
+	
+		minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.004,
+			scale = 0.01,
+			spread = {x = 100, y = 100, z = 100},
+			seed = 90155,
+			octaves = 3,
+			persist = 0.7,
+		},
+		biomes = {"rainforest"},
+		y_min = 1,
+		y_max = 31000,
+		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/junglebush3.mts",
 		flags = "place_center_x, place_center_z",
 	})
 
