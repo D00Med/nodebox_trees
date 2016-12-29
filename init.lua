@@ -78,6 +78,7 @@ minetest.override_item("flowers:waterlily", {
 
 minetest.override_item("default:bush_leaves", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_leaves_simple.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -85,6 +86,7 @@ minetest.override_item("default:bush_leaves", {
 
 minetest.override_item("default:acacia_bush_leaves", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_acacia_leaves_simple.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -92,6 +94,7 @@ minetest.override_item("default:acacia_bush_leaves", {
 
 minetest.override_item("default:leaves", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_leaves.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -99,6 +102,7 @@ minetest.override_item("default:leaves", {
 
 minetest.override_item("default:acacia_leaves", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_acacia_leaves.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -107,6 +111,7 @@ minetest.override_item("default:acacia_leaves", {
 
 minetest.override_item("default:jungleleaves", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_jungleleaves.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -114,6 +119,7 @@ minetest.override_item("default:jungleleaves", {
 
 minetest.override_item("default:pine_needles", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_pine_needles.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -121,6 +127,7 @@ minetest.override_item("default:pine_needles", {
 
 minetest.override_item("default:aspen_leaves", {
 	drawtype = "mesh",
+	tiles = "nodeboxtrees_aspen_leaves.png",
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -133,6 +140,17 @@ minetest.register_abm({
 	action = function(pos, node)
 		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
 			minetest.env:set_node(pos, {name="nodebox_trees:leaves_with_snow"})
+		end
+	end,
+})
+
+minetest.register_abm({
+	nodenames = "default:bush_leaves",
+	interval = 5,
+	chance = 1,
+	action = function(pos, node)
+		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+			minetest.env:set_node(pos, {name="nodebox_trees:bush_leaves_with_snow"})
 		end
 	end,
 })
@@ -154,6 +172,16 @@ minetest.register_node("nodebox_trees:leaves_with_snow", {
 	drawtype = "mesh",
 	mesh = "leaf.b3d",
 	tiles = {"default_leaves_snow.png", "default_snow.png", "default_snow.png",}, 
+	paramtype = "light",
+	visual_scale = 0.5,
+	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
+})
+
+minetest.register_node("nodebox_trees:bush_leaves_with_snow", {
+	description = "Bush Leaves With Snow",
+	drawtype = "mesh",
+	mesh = "leaf.b3d",
+	tiles = {"default_leaves_snow_simple.png", "default_snow.png", "default_snow.png",}, 
 	paramtype = "light",
 	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
