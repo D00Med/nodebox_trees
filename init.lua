@@ -76,6 +76,14 @@ minetest.override_item("flowers:waterlily", {
 	visual_scale = 0.5,
 })
 
+minetest.override_item("default:coral_skeleton", {
+	drawtype = "mesh",
+	tiles = {"nodeboxtrees_scoral.png"},
+	mesh = "leaf.b3d",
+	paramtype = "light",
+	visual_scale = 0.55,
+})
+
 minetest.override_item("default:coral_brown", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_bcoral.png"},
