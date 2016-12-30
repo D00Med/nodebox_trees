@@ -168,16 +168,16 @@ minetest.register_abm({
 	end,
 })
 
-minetest.register_abm({
-	nodenames = "default:bush_leaves",
-	interval = 5,
-	chance = 1,
-	action = function(pos, node)
-		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
-			minetest.env:set_node(pos, {name="nodebox_trees:bush_leaves_with_snow"})
-		end
-	end,
-})
+-- minetest.register_abm({
+	-- nodenames = "default:bush_leaves",
+	-- interval = 5,
+	-- chance = 1,
+	-- action = function(pos, node)
+		-- if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+			-- minetest.env:set_node(pos, {name="nodebox_trees:bush_leaves_with_snow"})
+		-- end
+	-- end,
+-- })
 
 minetest.register_abm({
 	nodenames = "default:pine_needles",
