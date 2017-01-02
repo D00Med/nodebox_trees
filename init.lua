@@ -32,8 +32,13 @@ minetest.register_node("nodebox_trees:waterlily", {
 		if def and def.liquidtype == "source" and
 				minetest.get_item_group(node, "water") > 0 then
 			if not minetest.is_protected(pos, player_name) then
+				if math.random(1,2) == 1 then
 				minetest.set_node(pos, {name = "nodebox_trees:waterlily",
 					param2 = math.random(0, 3)})
+				else
+				minetest.set_node(pos, {name = "flowers:waterlily",
+					param2 = math.random(0, 3)})
+				end
 				if not minetest.setting_getbool("creative_mode") then
 					itemstack:take_item()
 				end
@@ -71,6 +76,33 @@ minetest.override_item("flowers:waterlily", {
 	mesh = "waterlily.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
+	on_place = function(itemstack, placer, pointed_thing)
+		local pos = pointed_thing.above
+		local node = minetest.get_node(pointed_thing.under).name
+		local def = minetest.registered_nodes[node]
+		local player_name = placer:get_player_name()
+
+		if def and def.liquidtype == "source" and
+				minetest.get_item_group(node, "water") > 0 then
+			if not minetest.is_protected(pos, player_name) then
+				if math.random(1,2) == 1 then
+				minetest.set_node(pos, {name = "nodebox_trees:waterlily",
+					param2 = math.random(0, 3)})
+				else
+				minetest.set_node(pos, {name = "flowers:waterlily",
+					param2 = math.random(0, 3)})
+				end
+				if not minetest.setting_getbool("creative_mode") then
+					itemstack:take_item()
+				end
+			else
+				minetest.chat_send_player(player_name, "Node is protected")
+				minetest.record_protection_violation(pos, player_name)
+			end
+		end
+
+		return itemstack
+	end
 })
 
 minetest.override_item("default:coral_skeleton", {
