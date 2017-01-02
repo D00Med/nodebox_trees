@@ -108,6 +108,7 @@ minetest.override_item("flowers:waterlily", {
 minetest.override_item("default:coral_skeleton", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_scoral.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.55,
@@ -116,6 +117,7 @@ minetest.override_item("default:coral_skeleton", {
 minetest.override_item("default:coral_brown", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_bcoral.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.55,
@@ -124,6 +126,7 @@ minetest.override_item("default:coral_brown", {
 minetest.override_item("default:coral_orange", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_ocoral.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.55,
@@ -132,6 +135,7 @@ minetest.override_item("default:coral_orange", {
 minetest.override_item("default:bush_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_leaves_simple.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -140,6 +144,7 @@ minetest.override_item("default:bush_leaves", {
 minetest.override_item("default:acacia_bush_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_acacia_leaves_simple.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -148,6 +153,7 @@ minetest.override_item("default:acacia_bush_leaves", {
 minetest.override_item("default:leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_leaves.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -156,6 +162,7 @@ minetest.override_item("default:leaves", {
 minetest.override_item("default:acacia_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_acacia_leaves.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -165,6 +172,7 @@ minetest.override_item("default:acacia_leaves", {
 minetest.override_item("default:jungleleaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_jungleleaves.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -173,6 +181,7 @@ minetest.override_item("default:jungleleaves", {
 minetest.override_item("default:pine_needles", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_pine_needles.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
@@ -181,6 +190,7 @@ minetest.override_item("default:pine_needles", {
 minetest.override_item("default:aspen_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_aspen_leaves.png"},
+	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
 	visual_scale = 0.5,
