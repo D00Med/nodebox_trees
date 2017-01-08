@@ -60,6 +60,7 @@ minetest.clear_registered_decorations()
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/tree1.mts",
+		replacements = {["nodebox_trees:trunk_base"] = "default:tree",},
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -79,6 +80,7 @@ minetest.clear_registered_decorations()
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/tree2.mts",
+		replacements = {["nodebox_trees:trunk_base"] = "default:tree",},
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -98,6 +100,7 @@ minetest.clear_registered_decorations()
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/tree3.mts",
+		replacements = {["nodebox_trees:trunk_base"] = "default:tree",},
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -117,6 +120,7 @@ minetest.clear_registered_decorations()
 		y_min = 1,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/tree4.mts",
+		replacements = {["nodebox_trees:trunk_base"] = "default:tree",},
 		flags = "place_center_x, place_center_z",
 	})
 
@@ -251,6 +255,7 @@ minetest.clear_registered_decorations()
 		y_min = 2,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/pine1.mts",
+		replacements = {["nodebox_trees:pine_trunk_base"] = "default:pine_tree",},
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -270,6 +275,7 @@ minetest.clear_registered_decorations()
 		y_min = 2,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/pine2.mts",
+		replacements = {["nodebox_trees:pine_trunk_base"] = "default:pine_tree",},
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -289,6 +295,7 @@ minetest.clear_registered_decorations()
 		y_min = 2,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/pine3.mts",
+		replacements = {["nodebox_trees:pine_trunk_base"] = "default:pine_tree",},
 		flags = "place_center_x, place_center_z",
 	})
 	
@@ -308,6 +315,7 @@ minetest.clear_registered_decorations()
 		y_min = 2,
 		y_max = 31000,
 		schematic = minetest.get_modpath("nodebox_trees") .. "/schematics/pine4.mts",
+		replacements = {["nodebox_trees:pine_trunk_base"] = "default:pine_tree",},
 		flags = "place_center_x, place_center_z",
 	})
 

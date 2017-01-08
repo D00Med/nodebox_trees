@@ -199,6 +199,10 @@ minetest.override_item("default:aspen_leaves", {
 
 
 --leaves
+
+local snowy_leaves = false
+
+if snowy_leaves then
 minetest.register_node("nodebox_trees:leaves_with_snow", {
 	description = "Leaves With Snow",
 	drawtype = "mesh",
@@ -228,6 +232,42 @@ minetest.register_node("nodebox_trees:pine_needles_with_snow", {
 	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
 })
+
+--replace leaves with leaves_with_snow
+
+minetest.register_on_generated(function(minp, maxp)
+	if maxp.y < -1 or maxp.y > 31000 then
+		return
+	end
+	local needles = minetest.find_nodes_in_area(minp, maxp,
+		{"default:pine_needles"})
+	for n = 1, #needles do
+		local pos = {x=needles[n].x, y=needles[n].y, z=needles[n].z}
+		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+				minetest.set_node(pos, {name="nodebox_trees:pine_needles_with_snow"})
+		end
+	end
+	
+	local leaves = minetest.find_nodes_in_area(minp, maxp,
+		{"default:leaves"})
+	for n = 1, #leaves do
+		local pos = {x=leaves[n].x, y=leaves[n].y, z=leaves[n].z}
+		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+				minetest.set_node(pos, {name="nodebox_trees:leaves_with_snow"})
+		end
+	end
+	
+	local bush = minetest.find_nodes_in_area(minp, maxp,
+		{"default:bush_leaves"})
+	for n = 1, #bush do
+		local pos = {x=bush[n].x, y=bush[n].y, z=bush[n].z}
+		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
+				minetest.set_node(pos, {name="nodebox_trees:bush_leaves_with_snow"})
+		end
+	end
+end)
+
+end
 
 --trunk overrides
 
@@ -333,7 +373,7 @@ minetest.override_item("default:jungletree", {
 })
 
 
-
+--[[
 minetest.register_node("nodebox_trees:trunk_base", {
 	description = "Tree (base)",
 	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
@@ -379,6 +419,7 @@ minetest.register_node("nodebox_trees:pine_trunk_base", {
 	sounds = default.node_sound_wood_defaults(),
 	on_place = minetest.rotate_node
 })
+]]
 
 --original trunks
 
@@ -432,39 +473,7 @@ minetest.register_node("nodebox_trees:acacia_tree", {
 	on_place = minetest.rotate_node,
 })
 
---replace leaves with leaves_with_snow
 
-minetest.register_on_generated(function(minp, maxp)
-	if maxp.y < -1 or maxp.y > 31000 then
-		return
-	end
-	local needles = minetest.find_nodes_in_area(minp, maxp,
-		{"default:pine_needles"})
-	for n = 1, #needles do
-		local pos = {x=needles[n].x, y=needles[n].y, z=needles[n].z}
-		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
-				minetest.set_node(pos, {name="nodebox_trees:pine_needles_with_snow"})
-		end
-	end
-	
-	local leaves = minetest.find_nodes_in_area(minp, maxp,
-		{"default:leaves"})
-	for n = 1, #leaves do
-		local pos = {x=leaves[n].x, y=leaves[n].y, z=leaves[n].z}
-		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
-				minetest.set_node(pos, {name="nodebox_trees:leaves_with_snow"})
-		end
-	end
-	
-	local bush = minetest.find_nodes_in_area(minp, maxp,
-		{"default:bush_leaves"})
-	for n = 1, #bush do
-		local pos = {x=bush[n].x, y=bush[n].y, z=bush[n].z}
-		if minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z}).name == "default:snow" then
-				minetest.set_node(pos, {name="nodebox_trees:bush_leaves_with_snow"})
-		end
-	end
-end)
 
 --mapgen
 
