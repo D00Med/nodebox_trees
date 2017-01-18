@@ -156,7 +156,12 @@ minetest.override_item("default:leaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.b3d",
 	paramtype = "light",
+	paramtype2 = "degrotate",
 	visual_scale = 0.5,
+	on_construct = function(pos)
+		local node = minetest.get_node(pos)
+		node.param2 = math.random(10, 169)
+	end
 })
 
 minetest.override_item("default:acacia_leaves", {
