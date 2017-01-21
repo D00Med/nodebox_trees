@@ -109,68 +109,61 @@ minetest.override_item("default:coral_skeleton", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_scoral.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.55,
 })
 
 minetest.override_item("default:coral_brown", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_bcoral.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.55,
 })
 
 minetest.override_item("default:coral_orange", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_ocoral.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.55,
 })
 
 minetest.override_item("default:bush_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_leaves_simple.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.5,
 })
 
 minetest.override_item("default:acacia_bush_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_acacia_leaves_simple.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.5,
 })
 
 minetest.override_item("default:leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_leaves.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	paramtype2 = "degrotate",
-	visual_scale = 0.5,
-	on_construct = function(pos)
-		local node = minetest.get_node(pos)
-		node.param2 = math.random(10, 169)
-	end
+--	paramtype2 = "degrotate",
+--	on_construct = function(pos)
+--		local node = minetest.get_node(pos)
+--		node.param2 = math.random(10, 169)
+--	end
 })
 
 minetest.override_item("default:acacia_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_acacia_leaves.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.5,
 })
 
 
@@ -178,27 +171,24 @@ minetest.override_item("default:jungleleaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_jungleleaves.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.5,
 })
 
 minetest.override_item("default:pine_needles", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_pine_needles.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.5,
 })
 
 minetest.override_item("default:aspen_leaves", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_aspen_leaves.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.b3d",
+	mesh = "leaf.obj",
 	paramtype = "light",
-	visual_scale = 0.5,
 })
 
 
@@ -211,30 +201,27 @@ if snowy_leaves then
 minetest.register_node("nodebox_trees:leaves_with_snow", {
 	description = "Leaves With Snow",
 	drawtype = "mesh",
-	mesh = "leaf.b3d",
-	tiles = {"nodeboxtrees_leaves_snow.png", "default_snow.png", "default_snow.png",}, 
+	mesh = "leaf.obj",
+	tiles = {"nodeboxtrees_leaves_snow.png", "default_snow.png", "default_snow.png",},
 	paramtype = "light",
-	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
 })
 
 minetest.register_node("nodebox_trees:bush_leaves_with_snow", {
 	description = "Bush Leaves With Snow",
 	drawtype = "mesh",
-	mesh = "leaf.b3d",
-	tiles = {"nodeboxtrees_leaves_snow_simple.png", "default_snow.png", "default_snow.png",}, 
+	mesh = "leaf.obj",
+	tiles = {"nodeboxtrees_leaves_snow_simple.png", "default_snow.png", "default_snow.png",},
 	paramtype = "light",
-	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
 })
 
 minetest.register_node("nodebox_trees:pine_needles_with_snow", {
 	description = "Pine Needles With Snow",
 	drawtype = "mesh",
-	mesh = "leaf.b3d",
-	tiles = {"nodeboxtrees_pine_needles_snow.png",}, 
+	mesh = "leaf.obj",
+	tiles = {"nodeboxtrees_pine_needles_snow.png",},
 	paramtype = "light",
-	visual_scale = 0.5,
 	groups = {snappy=1, oddly_breakable_by_hand=1, leaves=1}
 })
 
@@ -252,7 +239,7 @@ minetest.register_on_generated(function(minp, maxp)
 				minetest.set_node(pos, {name="nodebox_trees:pine_needles_with_snow"})
 		end
 	end
-	
+
 	local leaves = minetest.find_nodes_in_area(minp, maxp,
 		{"default:leaves"})
 	for n = 1, #leaves do
@@ -261,7 +248,7 @@ minetest.register_on_generated(function(minp, maxp)
 				minetest.set_node(pos, {name="nodebox_trees:leaves_with_snow"})
 		end
 	end
-	
+
 	local bush = minetest.find_nodes_in_area(minp, maxp,
 		{"default:bush_leaves"})
 	for n = 1, #bush do
@@ -299,7 +286,7 @@ minetest.override_item("default:acacia_tree", {
 		connect_left = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 		connect_right = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 	},
-	connects_to = {"default:acacia_tree"}	
+	connects_to = {"default:acacia_tree"}
 })
 
 minetest.override_item("default:tree", {
@@ -316,7 +303,7 @@ minetest.override_item("default:tree", {
 		connect_left = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 		connect_right = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 	},
-	connects_to = {"default:tree"}	
+	connects_to = {"default:tree"}
 })
 
 minetest.override_item("default:aspen_tree", {
@@ -333,7 +320,7 @@ minetest.override_item("default:aspen_tree", {
 		connect_left = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 		connect_right = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 	},
-	connects_to = {"default:aspen_tree"}	
+	connects_to = {"default:aspen_tree"}
 })
 
 minetest.override_item("default:pine_tree", {
@@ -350,7 +337,7 @@ minetest.override_item("default:pine_tree", {
 		connect_left = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 		connect_right = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 	},
-	connects_to = {"default:pine_tree"}	
+	connects_to = {"default:pine_tree"}
 })
 
 minetest.override_item("default:jungletree", {
@@ -374,7 +361,7 @@ minetest.override_item("default:jungletree", {
 		connect_left = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 		connect_right = {{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}},
 	},
-	connects_to = {"default:jungletree"}	
+	connects_to = {"default:jungletree"}
 })
 
 
