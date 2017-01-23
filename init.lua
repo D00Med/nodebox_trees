@@ -109,7 +109,7 @@ minetest.override_item("default:coral_skeleton", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_scoral.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.obj",
+	mesh = "coral.obj",
 	paramtype = "light",
 })
 
@@ -117,7 +117,7 @@ minetest.override_item("default:coral_brown", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_bcoral.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.obj",
+	mesh = "coral.obj",
 	paramtype = "light",
 })
 
@@ -125,7 +125,7 @@ minetest.override_item("default:coral_orange", {
 	drawtype = "mesh",
 	tiles = {"nodeboxtrees_ocoral.png"},
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
-	mesh = "leaf.obj",
+	mesh = "coral.obj",
 	paramtype = "light",
 })
 
