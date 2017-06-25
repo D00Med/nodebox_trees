@@ -135,6 +135,7 @@ minetest.override_item("default:bush_leaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 minetest.override_item("default:acacia_bush_leaves", {
@@ -143,6 +144,7 @@ minetest.override_item("default:acacia_bush_leaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 minetest.override_item("default:leaves", {
@@ -151,6 +153,7 @@ minetest.override_item("default:leaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 minetest.override_item("default:acacia_leaves", {
@@ -159,6 +162,7 @@ minetest.override_item("default:acacia_leaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 
@@ -168,6 +172,7 @@ minetest.override_item("default:jungleleaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 minetest.override_item("default:pine_needles", {
@@ -176,6 +181,7 @@ minetest.override_item("default:pine_needles", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 minetest.override_item("default:aspen_leaves", {
@@ -184,6 +190,7 @@ minetest.override_item("default:aspen_leaves", {
 	wield_scale = {x = 0.5, y = 0.5, z = 0.5},
 	mesh = "leaf.obj",
 	paramtype = "light",
+	waving = 2,
 })
 
 
